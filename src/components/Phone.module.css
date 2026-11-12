@@ -1,0 +1,254 @@
+.phone {
+  width: 300px;
+  aspect-ratio: 300 / 620;
+  border-radius: 50px;
+  padding: 10px;
+  background: linear-gradient(145deg, #3a3d3a, #0d0e0d 30%, #1c1e1c 70%, #4a4d49);
+  box-shadow:
+    0 60px 120px -40px rgba(0, 0, 0, 0.75),
+    0 0 0 1px rgba(255, 255, 255, 0.08) inset,
+    0 0 0 1px #000;
+  position: relative;
+}
+
+.screen {
+  position: relative;
+  height: 100%;
+  border-radius: 41px;
+  overflow: hidden;
+  background: radial-gradient(120% 60% at 50% 0%, #141a12 0%, #070807 60%);
+  color: #fff;
+  padding: 0 16px 16px;
+  font-size: 12px;
+}
+
+.status {
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.island {
+  width: 88px;
+  height: 26px;
+  border-radius: 20px;
+  background: #000;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.icons {
+  display: flex;
+  gap: 3px;
+  align-items: flex-end;
+}
+
+.icons i {
+  width: 3px;
+  background: #fff;
+  border-radius: 1px;
+}
+
+.icons i:nth-child(1) {
+  height: 5px;
+}
+
+.icons i:nth-child(2) {
+  height: 7px;
+}
+
+.icons i:nth-child(3) {
+  height: 9px;
+}
+
+.appbar {
+  padding: 6px 2px 14px;
+}
+
+.brand {
+  font-size: 8.5px;
+  letter-spacing: 0.42em;
+  color: #9aa098;
+}
+
+.brand b {
+  color: var(--green);
+  font-weight: 400;
+}
+
+.appTitle {
+  margin: 10px 0 0;
+  font-size: 21px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+.appSub {
+  margin: 3px 0 0;
+  color: #8a9088;
+  font-size: 11.5px;
+}
+
+.card {
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 12px;
+  margin-bottom: 10px;
+}
+
+.cardAccent {
+  background: linear-gradient(160deg, rgba(141, 198, 63, 0.13), rgba(141, 198, 63, 0.03));
+  border-color: rgba(141, 198, 63, 0.28);
+}
+
+.label {
+  margin: 0 0 8px;
+  font-family: var(--f-label);
+  font-size: 8.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #8a9088;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 22px 1fr auto;
+  gap: 8px;
+  align-items: center;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.row:last-child {
+  border-bottom: 0;
+}
+
+.ico {
+  width: 22px;
+  height: 22px;
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.06);
+  position: relative;
+}
+
+.ico::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+}
+
+.dot::after {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+}
+
+.ring::after {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 1.5px solid #cfd4cd;
+}
+
+.doc::after {
+  width: 8px;
+  height: 10px;
+  border-radius: 1.5px;
+  border: 1.4px solid #cfd4cd;
+}
+
+.pill::after {
+  width: 11px;
+  height: 5px;
+  border-radius: 4px;
+  border: 1.4px solid #cfd4cd;
+  transform: rotate(-35deg);
+}
+
+.drop::after {
+  width: 8px;
+  height: 8px;
+  border-radius: 50% 0 50% 50%;
+  border: 1.4px solid var(--green);
+  transform: rotate(-45deg);
+}
+
+.rowText {
+  display: grid;
+  min-width: 0;
+}
+
+.rowLabel {
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rowMeta {
+  font-size: 10.5px;
+  color: #8a9088;
+}
+
+.rowValue {
+  font-size: 13px;
+}
+
+.vGreen {
+  color: var(--green);
+}
+
+.vDim {
+  color: #8a9088;
+}
+
+.toggleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 12px;
+}
+
+.toggleRow:last-child {
+  border-bottom: 0;
+}
+
+.toggle {
+  width: 30px;
+  height: 18px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.14);
+  position: relative;
+}
+
+.toggle i {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.toggleOn {
+  background: var(--green);
+}
+
+.toggleOn i {
+  left: 14px;
+}
+
+.chart {
+  width: 100%;
+  height: 80px;
+}

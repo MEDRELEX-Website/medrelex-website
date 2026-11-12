@@ -1,0 +1,17 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  color: #fff;
+}
+
+.word {
+  font-size: 15px;
+  letter-spacing: 0.4em;
+  margin-right: -0.4em;
+  line-height: 1;
+}
+
+.x {
+  color: var(--green);
+}

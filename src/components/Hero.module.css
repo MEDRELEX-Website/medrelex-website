@@ -1,0 +1,130 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: #000;
+  isolation: isolate;
+}
+
+.short {
+  min-height: 88svh;
+}
+
+.media {
+  position: absolute;
+  inset: -4% 0 -12% 0;
+  z-index: -3;
+}
+
+.kenburns {
+  position: absolute;
+  inset: 0;
+  animation: drift 32s var(--ease-std) infinite alternate;
+  transform-origin: 60% 40%;
+}
+
+.kenburns img {
+  object-fit: cover;
+}
+
+@keyframes drift {
+  0% {
+    transform: scale(1.04) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: scale(1.14) translate3d(-1.8%, -1.2%, 0);
+  }
+}
+
+.shade {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.5) 42%, rgba(0, 0, 0, 0.05) 75%),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0) 45%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 22%);
+}
+
+.grain {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.particles {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.85;
+}
+
+.content {
+  position: relative;
+  padding-bottom: clamp(90px, 12vh, 150px);
+  padding-top: 180px;
+}
+
+.eyebrow {
+  margin-bottom: 30px;
+}
+
+.title {
+  max-width: 13ch;
+  text-wrap: balance;
+}
+
+.sub {
+  margin-top: 32px;
+  max-width: 44ch;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.ctas {
+  margin-top: 44px;
+}
+
+.chip {
+  margin-top: 30px;
+}
+
+.scrollCue {
+  position: absolute;
+  right: clamp(20px, 4vw, 56px);
+  bottom: 44px;
+  width: 1px;
+  height: 72px;
+  background: rgba(255, 255, 255, 0.18);
+  overflow: hidden;
+}
+
+.scrollCue span {
+  position: absolute;
+  left: 0;
+  width: 1px;
+  height: 28px;
+  background: var(--green);
+  animation: cue 2.4s var(--ease) infinite;
+}
+
+@keyframes cue {
+  0% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(80px);
+  }
+}
+
+@media (max-width: 720px) {
+  .shade {
+    background:
+      linear-gradient(0deg, rgba(0, 0, 0, 0.94) 10%, rgba(0, 0, 0, 0.2) 70%),
+      linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 25%);
+  }
+  .scrollCue {
+    display: none;
+  }
+}

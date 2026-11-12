@@ -1,0 +1,138 @@
+.form {
+  display: grid;
+  gap: 30px;
+}
+
+.group {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.legend {
+  font-size: 15px;
+  color: var(--muted);
+  margin-bottom: 14px;
+  padding: 0;
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pills button {
+  padding: 11px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  font-size: 14.5px;
+  color: #c9cec7;
+  transition:
+    background 0.25s,
+    color 0.25s,
+    border-color 0.25s;
+}
+
+.pills button:hover {
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.pills .on {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+.row2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+.field span {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.field input,
+.field textarea {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+  color: #fff;
+  font: inherit;
+  font-size: 19px;
+  padding: 10px 0;
+  outline: none;
+  transition: border-color 0.3s;
+  resize: vertical;
+}
+
+.field input:focus,
+.field textarea:focus {
+  border-color: var(--green);
+}
+
+.consent {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.consent input {
+  accent-color: var(--green);
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+}
+
+.form :global(.btn) {
+  justify-self: start;
+}
+
+.error {
+  margin: 0;
+  color: #e9a08f;
+  font-size: 14px;
+}
+
+.done {
+  display: grid;
+  gap: 20px;
+}
+
+.doneMark {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: 1px solid var(--green);
+  position: relative;
+  box-shadow: 0 0 40px var(--green-glow);
+}
+
+.doneMark::after {
+  content: "";
+  position: absolute;
+  left: 19px;
+  top: 14px;
+  width: 12px;
+  height: 20px;
+  border-right: 1.5px solid var(--green);
+  border-bottom: 1.5px solid var(--green);
+  transform: rotate(45deg);
+}
+
+@media (max-width: 640px) {
+  .row2 {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,149 @@
+.grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(36px, 6vw, 100px);
+  align-items: center;
+}
+
+.intro {
+  margin: 24px 0 40px;
+  max-width: 46ch;
+}
+
+.visual {
+  min-height: 640px;
+  display: flex;
+  align-items: flex-end;
+  padding: clamp(18px, 3vw, 36px);
+}
+
+.bg {
+  object-position: center;
+}
+
+.shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.1) 70%);
+}
+
+.doc {
+  position: relative;
+  width: 100%;
+  background: rgba(246, 247, 242, 0.96);
+  color: #0b0d0b;
+  border-radius: 20px;
+  padding: 24px 24px 18px;
+  box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.8);
+}
+
+.docHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.docKicker {
+  margin: 0;
+  font-family: var(--f-label);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--green-dim);
+}
+
+.docTitle {
+  margin: 6px 0 0;
+  font-size: 24px;
+  letter-spacing: -0.03em;
+}
+
+.docMeta {
+  display: grid;
+  justify-items: end;
+  font-size: 13px;
+  color: #5b6059;
+}
+
+.docRow {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 14px;
+  align-items: center;
+  padding: 13px 10px;
+  margin: 0 -10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  font-size: 14.5px;
+  border-radius: 10px;
+  transition: background 0.4s;
+}
+
+.hl {
+  background: rgba(141, 198, 63, 0.16);
+}
+
+.docLabel {
+  font-family: var(--f-label);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #6b7069;
+}
+
+.docRow b {
+  font-weight: 500;
+}
+
+.medline {
+  position: relative;
+  height: 26px;
+}
+
+.medline i {
+  position: absolute;
+  top: 7px;
+  height: 6px;
+  border-radius: 3px;
+  background: #c9ccc4;
+}
+
+.medline .new {
+  background: var(--green-dim);
+  top: 15px;
+}
+
+.medline em {
+  position: absolute;
+  top: -6px;
+  font-style: normal;
+  font-size: 10.5px;
+  color: #5b6059;
+}
+
+.docFoot {
+  margin: 14px 0 0;
+  font-size: 11.5px;
+  color: #7b8079;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .visual {
+    min-height: 560px;
+  }
+  .docRow {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  .docHead {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .docMeta {
+    justify-items: start;
+  }
+}

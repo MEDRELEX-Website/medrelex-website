@@ -1,0 +1,89 @@
+.acc {
+  border-top: 1px solid var(--line);
+}
+
+:global(.theme-light) .acc,
+:global(.theme-light) .item {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.item {
+  border-bottom: 1px solid var(--line);
+}
+
+.head {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 26px 0;
+  text-align: left;
+}
+
+.num {
+  font-size: 15px;
+  color: var(--muted);
+  min-width: 26px;
+}
+
+.title {
+  flex: 1;
+  font-size: clamp(19px, 1.7vw, 24px);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+
+.open .title,
+.head:hover .title {
+  opacity: 1;
+}
+
+.lg .title {
+  font-size: clamp(22px, 2.2vw, 30px);
+}
+
+.chev {
+  width: 11px;
+  height: 11px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg) translate(-3px, -3px);
+  transition: transform 0.45s var(--ease);
+  opacity: 0.7;
+}
+
+.open .chev {
+  transform: rotate(-135deg) translate(-3px, -3px);
+}
+
+.panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.55s var(--ease);
+}
+
+.open .panel {
+  grid-template-rows: 1fr;
+}
+
+.inner {
+  overflow: hidden;
+}
+
+.body {
+  padding: 0 0 28px 44px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: #b4b9b2;
+  max-width: 62ch;
+}
+
+:global(.theme-light) .body {
+  color: #4e534d;
+}
+
+.body p {
+  margin: 0 0 12px;
+}

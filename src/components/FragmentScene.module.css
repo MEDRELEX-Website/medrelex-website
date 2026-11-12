@@ -1,0 +1,262 @@
+.scene {
+  position: relative;
+  height: 420vh;
+  background: #000;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  overflow: hidden;
+}
+
+.glow {
+  position: absolute;
+  left: 50%;
+  bottom: -30%;
+  width: 120%;
+  height: 70%;
+  transform: translateX(-50%);
+  background: radial-gradient(closest-side, rgba(141, 198, 63, 0.16), rgba(141, 198, 63, 0) 70%);
+  pointer-events: none;
+}
+
+.copy {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  display: grid;
+  align-items: center;
+  pointer-events: none;
+}
+
+.state {
+  grid-area: 1 / 1;
+  max-width: 560px;
+}
+
+.state h2 {
+  font-size: clamp(38px, 4.7vw, 70px);
+}
+
+.em {
+  font-style: normal;
+  color: var(--green);
+}
+
+.lead {
+  margin-top: 28px;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.stage {
+  position: absolute;
+  inset: 120px 4vw 70px 4vw;
+  z-index: 2;
+}
+
+.card {
+  position: absolute;
+  translate: -50% -50%;
+  min-width: 190px;
+  padding: 14px 16px 14px 34px;
+  border-radius: 16px;
+  background: linear-gradient(160deg, rgba(36, 41, 36, 0.92), rgba(16, 19, 16, 0.92));
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: 0 24px 60px -24px rgba(0, 0, 0, 0.9);
+  display: grid;
+  gap: 2px;
+  will-change: transform, left, top;
+}
+
+.cardKind {
+  position: absolute;
+  left: 15px;
+  top: 19px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #9aa098;
+}
+
+.clinic .cardKind {
+  background: #e8ebe4;
+}
+
+.data .cardKind {
+  background: var(--green);
+  box-shadow: 0 0 10px var(--green-glow);
+}
+
+.life .cardKind {
+  background: transparent;
+  border: 1px solid #b4bab2;
+}
+
+.cardLabel {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.cardMeta {
+  font-size: 12.5px;
+  color: #8f958e;
+  white-space: nowrap;
+}
+
+.timeline {
+  position: absolute;
+  left: 6%;
+  right: 6%;
+  top: 86%;
+}
+
+.line {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(141, 198, 63, 0.2), var(--green) 50%, rgba(141, 198, 63, 0.2));
+  transform-origin: left;
+}
+
+.years {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 18px;
+  font-family: var(--f-num);
+  font-size: 13px;
+  color: #8f958e;
+  letter-spacing: 0.04em;
+}
+
+.node {
+  position: absolute;
+  top: 86%;
+  width: 9px;
+  height: 9px;
+  margin: -4.5px 0 0 -4.5px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow:
+    0 0 0 4px rgba(141, 198, 63, 0.12),
+    0 0 18px var(--green-glow);
+}
+
+.record {
+  position: absolute;
+  right: 2%;
+  top: 14%;
+  width: min(460px, 44vw);
+  padding: 22px 22px 18px;
+}
+
+.recordHead {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.recordDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 12px var(--green);
+}
+
+.recordMeta {
+  margin-left: auto;
+  font-size: 12.5px;
+  color: #8f958e;
+}
+
+.recordChart {
+  width: 100%;
+  height: 110px;
+  margin: 18px 0 10px;
+}
+
+.recordRows {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.recordRows span {
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #c9cec7;
+}
+
+.counter {
+  position: absolute;
+  left: var(--gutter);
+  bottom: 40px;
+  z-index: 3;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-family: var(--f-label);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #8f958e;
+}
+
+.counter :global(.num) {
+  font-size: 34px;
+  color: #fff;
+  font-weight: 300;
+}
+
+@media (max-width: 900px) {
+  .scene {
+    height: 380vh;
+  }
+  .copy {
+    align-items: start;
+    padding-top: 110px;
+  }
+  .state h2 {
+    font-size: clamp(32px, 8vw, 46px);
+  }
+  .lead {
+    margin-top: 16px;
+    font-size: 17px;
+  }
+  .stage {
+    inset: 46% 0 60px 0;
+  }
+  .card {
+    min-width: 0;
+    padding: 9px 11px 9px 26px;
+    border-radius: 12px;
+  }
+  .cardKind {
+    left: 11px;
+    top: 14px;
+    width: 6px;
+    height: 6px;
+  }
+  .cardLabel {
+    font-size: 12px;
+  }
+  .cardMeta {
+    display: none;
+  }
+  .record {
+    left: 50%;
+    right: auto;
+    top: 6%;
+    width: calc(100% - 40px);
+    translate: -50% 0;
+  }
+  .counter {
+    display: none;
+  }
+}

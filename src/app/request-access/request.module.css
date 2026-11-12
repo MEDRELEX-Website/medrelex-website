@@ -1,0 +1,66 @@
+.page {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  min-height: 100svh;
+  background: #000;
+}
+
+.visual {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  overflow: hidden;
+}
+
+.visual img {
+  object-fit: cover;
+}
+
+.shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.1) 60%), linear-gradient(90deg, rgba(0, 0, 0, 0) 60%, #000);
+}
+
+.quote {
+  position: absolute;
+  left: clamp(24px, 4vw, 64px);
+  right: 24px;
+  bottom: clamp(40px, 7vh, 80px);
+}
+
+.q {
+  margin: 0;
+  font-size: clamp(30px, 3vw, 46px);
+  font-weight: 300;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+}
+
+.qBy {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.formCol {
+  padding: 180px clamp(24px, 6vw, 110px) 120px;
+  max-width: 820px;
+}
+
+.lead {
+  margin: 28px 0 56px;
+}
+
+@media (max-width: 960px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+  .visual {
+    position: relative;
+    height: 56svh;
+  }
+  .formCol {
+    padding-top: 60px;
+  }
+}

@@ -1,0 +1,131 @@
+.ring {
+  position: relative;
+  width: min(900px, 100%);
+  aspect-ratio: 1;
+  margin: 0 auto;
+  container-type: inline-size;
+}
+
+.orbits {
+  position: absolute;
+  inset: 0;
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.09);
+  stroke-width: 1;
+}
+
+.orbits .inner {
+  stroke: rgba(141, 198, 63, 0.35);
+  stroke-dasharray: 2 8;
+}
+
+.track {
+  position: absolute;
+  inset: 0;
+  animation: spin 160s linear infinite;
+}
+
+.innerTrack {
+  animation-duration: 110s;
+  animation-direction: reverse;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.node {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  transform: rotate(var(--a)) translateY(calc(var(--r) * -1));
+}
+
+.node::before {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  margin: -3.5px 0 0 -3.5px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.06);
+}
+
+.small::before {
+  background: var(--green);
+  box-shadow: 0 0 12px var(--green-glow);
+}
+
+.label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  translate: -50% 14px;
+  white-space: nowrap;
+  font-size: clamp(11px, 1.25vw, 15px);
+  color: #d5dad3;
+  /* counter-rotate so labels stay upright as the ring turns */
+  transform: rotate(calc(var(--a) * -1));
+  animation: counter 160s linear infinite;
+}
+
+.innerTrack .label {
+  animation: counter-rev 110s linear infinite;
+  color: var(--green-soft);
+  font-size: clamp(10px, 1.1vw, 13.5px);
+}
+
+@keyframes counter {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: -360deg;
+  }
+}
+
+@keyframes counter-rev {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
+
+.center {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  text-align: center;
+}
+
+.center img {
+  width: clamp(54px, 8vw, 86px);
+  height: auto;
+  filter: drop-shadow(0 0 30px rgba(141, 198, 63, 0.35));
+}
+
+.centerWord {
+  margin: 16px 0 0;
+  font-size: clamp(11px, 1.3vw, 15px);
+  margin-right: -0.42em;
+}
+
+.centerWord b {
+  color: var(--green);
+  font-weight: 400;
+}
+
+.centerSub {
+  margin: 8px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+}
